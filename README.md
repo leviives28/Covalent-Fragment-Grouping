@@ -44,7 +44,7 @@ The program will attempt to optimize the data into groups based on the defined c
 Enter the desired location and name of the CSV output file: Covalent_Fragments_Output.csv
 ```
 
-Repository includes sample data for running the program
+Repository includes sample data and output for running the program with above inputs
 ```
 Covalent_Fragments.csv
 ```

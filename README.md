@@ -45,8 +45,15 @@ Enter the desired location and name of the CSV output file: Covalent_Fragments_O
 ```
 
 ### Repository includes sample data and output for running the program with above inputs
+
+#### Input sample data
 ```
 Covalent_Fragments.csv
+```
+
+#### Output sample data
+```
+Covalent_Fragments_Output.csv
 ```
 
 ## Status

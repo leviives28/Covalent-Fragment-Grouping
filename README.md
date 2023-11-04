@@ -53,7 +53,7 @@ Covalent_Fragments.csv
 
 #### Output sample data
 ```
-Covalent_Fragments_Output.csv
+Covalent_Fragments_Outputs.csv
 ```
 
 ## Status

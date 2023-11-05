@@ -28,7 +28,7 @@ def save_output (headers: list, groups: list):
         Saves the headers and sorted groups into a new csv file.
 
         @headers: The column names to be output to the new file
-        @groups: The sorted groups that are to be output to a new csv file
+        @groups: The sorted groups that are to be output to a new csv file. A list of lists (groups) of lists (group members)
     """
     output_file = inputs.file_output()
     with open(output_file, 'w', newline='') as csvfile:

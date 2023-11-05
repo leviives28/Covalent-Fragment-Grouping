@@ -4,9 +4,9 @@
 ## Description
 Program was created for sorting covalent fragments in to groups based on their exact mass.
 
-The program takes a set of data, in the form of a csv file, and sorts it into groups based on a predefined column, minimum difference between group items, and maximum group size, using the pulp library.
+The program takes a set of data, in the form of a csv file, and sorts it into groups based on a predefined column, minimum difference between that column of each group item, and maximum group size, using the pulp library.
 
-Once the data is optimized, then each group value is updated with a well location, based on further inputs provided by the user.
+Once the data is optimized, then each group value is updated with a plate well location, based on further inputs provided by the user, such as plate format, ordering, starting plate etc.
 
 The output is then saved to a csv file defined by the user.
 

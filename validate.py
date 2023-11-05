@@ -4,7 +4,7 @@ def validate(file: dict, result_groups: list, group_size: int, exact_mass_column
         Returns true or false dependent on the success of the grouping
 
         @file: This should be the dictionary containing the input files initial data (stored in key: table_data)
-        @result_groups: This is the sorted groups returned from the optimize function
+        @result_groups: This is the sorted groups returned from the optimize function. A list of lists (groups) of lists (group members)
         @group_size: The maximum size of groups, defined by user input
         @exact_mass_column: The 0 indexed column of the input file in which exact_mass exists, defined by user input
         @minimum_difference: The minimum difference between each member in a group, defined by user input

@@ -9,7 +9,7 @@ def sort_outputs (groups: list, location: int, format: int, ordering: str) -> li
     """
         Returns groups with update group members -> their well locations
 
-        @groups: The sorted groups returned from the optimize function
+        @groups: The sorted groups returned from the optimize function. A list of lists (groups) of lists (group members)
         @location: The location of the first receiver plate, defined by user input
         @format: The format of the well plate (96 or 384), defined by user input
         @ordering: The ordering (h or v) in which to place groups in plate wells, defined by user input.

@@ -21,7 +21,7 @@ git clone https://github.com/leviives28/Covalent-Fragment-Grouping/
 
 ## Running the App
 
-### Navigate to the location of the downloaded program files
+### Navigate to the location of the downloaded program files, and run the main file (main.py)
 ```
 python3 .\main.py
 ```

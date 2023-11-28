@@ -23,7 +23,7 @@ def read_and_sort_file (file: str, column: int) -> dict:
 
 
 # Function to save the output to a given file
-def save_output (headers: list, groups: list):
+def save_output (headers: list, groups: list, protein_groups: list):
     """
         Saves the headers and sorted groups into a new csv file.
 
@@ -32,12 +32,18 @@ def save_output (headers: list, groups: list):
     """
     output_file = inputs.file_output()
     with open(output_file, 'w', newline='') as csvfile:
+        csvfile.write('Covalent-Fragment-Grouping\n')
         writer = csv.writer(csvfile)
         writer.writerow(headers)
         for group in groups:
             writer.writerow(' ')
             for item in group:
                 writer.writerow(item) 
+        writer.writerow('')
+        writer.writerow('')
+        csvfile.write('Protein-Mass-Grouping\n')
+        for group in protein_groups:
+            writer.writerow(group)
         writer.writerow('')
 
     print(f"Saving file to '{output_file}'.")

@@ -107,3 +107,32 @@ def exact_mass_column_input () -> int:
             print()
     return exact_mass_column
 
+
+# Ask the mass of the protein
+def protein_mass_input () -> int:
+    """
+        Returns the numerical value of the proteins mass, defined by user input
+    """
+    protein_mass = ""
+    while not isinstance(protein_mass, float):
+        try:
+            protein_mass = float(input("What is the mass of the protein? "))
+        except ValueError:
+            print("Invalid Input. Please enter either an integer or a decimal")
+            print()
+    return protein_mass
+
+
+# Ask which column the fragments ID is in
+def fragment_id_column_input () -> int:
+    """
+        Returns the integer of the column that the fragments id is in
+    """
+    fragment_id_column = ""
+    while not (isinstance(fragment_id_column, int)):
+        try:
+            fragment_id_column = int(input("In which column of the input file are the fragment IDs? (0 indexed) "))
+        except ValueError:
+            print("Invalid input. Please enter a whole number")
+            print()
+    return fragment_id_column

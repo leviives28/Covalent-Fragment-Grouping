@@ -8,7 +8,9 @@ The program takes a set of data, in the form of a csv file, and sorts it into gr
 
 Once the data is optimized, then each group value is updated with a plate well location, based on further inputs provided by the user, such as plate format, ordering, starting plate etc.
 
-The output is then saved to a csv file defined by the user.
+Following the placement of groups into well locations, further processing is completed, which adds the given protein mass to each group items exact mass, and sorts these values into a rows.
+
+Both groups are then output to a single csv file.
 
 
 ## Getting Started
@@ -36,6 +38,8 @@ Are groups to be ordered horizontically or vertically in the plate? (h or v): v
 What should be the maximum size of each group? (number): 5
 What should be the minimum difference between each group members exact mass? (number - decimal or integer): 5
 In which column of the input file is the exact mass? (number (0 indexed)): 4
+What is the mass of the protein? 2000
+In which column of the input file are the fragment IDs? (0 indexed) 0
 ```
 
 ### The program will attempt to optimize the data into groups based on the defined constraints, and then will ask for the path+name of the output file.

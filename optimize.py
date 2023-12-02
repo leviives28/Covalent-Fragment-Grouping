@@ -1,7 +1,5 @@
 import pulp
 import warnings
-import time
-import progress
 
 # The function which optimizes the values into required groupings
 def optimize (file: dict, group_size: int, exact_mass_column: int, minimum_difference: float) -> list:
@@ -42,6 +40,7 @@ def optimize (file: dict, group_size: int, exact_mass_column: int, minimum_diffe
 
     # Repeat for num_groups + 1 times
     for j in range(num_groups + 1):
+        print('Solving Optimal Groups:', round((j / num_groups) * 100, 1), '%', end='\r')
         # Repeat for each item in the input data
         for i in range(len(file["table_data"])):
             # Repeat for i + 1, for each item in the input data
@@ -49,14 +48,7 @@ def optimize (file: dict, group_size: int, exact_mass_column: int, minimum_diffe
                 # Add to the problem, the weighting for two items of the group, if they are less than the minimum difference, else add 1
                 problem += (variables[(i, j)] + variables[(k, j)]) <= 1 if file["table_data"][k][exact_mass_column] - file["table_data"][i][exact_mass_column] < minimum_difference else 1
 
-    # Define the total number of iterations for the progress bar
-    total_iterations = num_groups + 1
-
-    # Reapeat for (return value of progress bar function) times
-    for iteration in progress.progress_bar(range(total_iterations), total_iterations):
-        # Halt execution before repeating
-        time.sleep(0.1) 
-
+    print('\nSolving Solution...')
     # Continue until breaks (optimization completes, successful or not)
     while True:
         # Set the value of status to the return value of calling the solve method of the problem object
@@ -70,9 +62,6 @@ def optimize (file: dict, group_size: int, exact_mass_column: int, minimum_diffe
         # Otherwise, if the problem is undefined, break the loop
         elif status == pulp.LpStatusUndefined:
             break
-
-    # Print the status of the function -> Will print whether optimization has failed or succeeded
-    print("[==================================================] 100%")
 
     # Predefine the results list group, based on the value of num_groups
     result_groups = [[] for _ in range(num_groups + 1)]
